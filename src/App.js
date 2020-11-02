@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import Cabecera from './components/Cabecera';
+import PieDePagina from './components/PieDePagina'
+import TodoList from './components/TodoList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {  }
+  }
+  render() { 
+    return (<div>
+      <Cabecera titulo="Curso de React" subtitulo="Clase 2" descripcion="ToDo List Demo"/>
+      
+      <main className="container">
+        <TodoList />
+      </main>
+      
+
+      <PieDePagina empresa="Educacion IT" año={2020}/>
+    </div>  );
+  }
 }
 
 export default App;
